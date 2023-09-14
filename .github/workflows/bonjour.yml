@@ -1,14 +1,12 @@
-name: Bonjour
+name: CI nodejs
 on:
   - push
 jobs:
-  dire_bonjour:
+  nodejs_test:
     runs-on: ubuntu-22.04
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v3
-      - run: |
-          sudo apt-get update
-          sudo apt-get install --yes cowsay
-      - run: ls -l # Liste les fichier du répertoire courant
-      - run: cat README.md | cowsay
+      - uses: actions/checkout@v3
+      - run: echo "/node_modules" > .gitignore
+      - run: cat "/workspace/esgi-ci-cd/.gitignore"
+      - run: npm install
+      - run: npm run lint
