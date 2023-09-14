@@ -7,6 +7,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: echo "/node_modules" > .gitignore
-      - run: cat "/workspace/esgi-ci-cd/.gitignore"
+      - run: cat "./.gitignore"
       - run: npm install
       - run: npm run lint
