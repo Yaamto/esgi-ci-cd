@@ -6,6 +6,10 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '19'
       - run: echo "/node_modules" > .gitignore
       - run: cat "./.gitignore"
       - run: npm install
