@@ -1,6 +1,7 @@
 name: CI nodejs
 on:
   - push
+  - pull_request
 jobs:
   nodejs_test:
     runs-on: ubuntu-22.04
