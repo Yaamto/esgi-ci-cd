@@ -4,9 +4,6 @@ on:
 jobs:
   nodejs_test:
     runs-on: ubuntu-22.04
-    container: 
-      image: ghcr.io/dduportal/esgi-gitpod
-      options: --user root
     steps:
       - uses: actions/checkout@v3
       - run: docker image build -t nodejs_image ./
