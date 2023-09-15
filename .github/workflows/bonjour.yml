@@ -9,7 +9,7 @@ jobs:
       options: --user root
     steps:
       - uses: actions/checkout@v3
-      - run: docker image build --name=nodejs_image ./
+      - run: docker image build nodejs_image ./
       - run: docker run nodejs_image
       - run: npm install
       - run: npm run lint
